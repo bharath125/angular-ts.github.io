@@ -1,0 +1,78 @@
+<div class="edit-form">
+  <h1>Edit Student</h1>
+  <hr />
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label nzSpan="9" nzFor="id" nzRequired>Roll No </nz-form-label>
+      <nz-form-control nzSpan="16">
+        <input nz-input formControlName="id" id="id" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="9" nzFor="firstName" nzRequired
+        >First Name
+      </nz-form-label>
+      <nz-form-control nzSpan="16" nzHasFeedback [nzErrorTip]="fnameError">
+        <input nz-input formControlName="firstName" id="firstName" />
+        <ng-template #fnameError let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >Please add student FirstName</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="9" nzFor="lastName" nzRequired
+        >Last Name
+      </nz-form-label>
+      <nz-form-control nzSpan="16" nzHasFeedback [nzErrorTip]="lnameError">
+        <input nz-input formControlName="lastName" id="lastName" />
+        <ng-template #lnameError let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >Please add student LastName</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="9" nzFor="subject" nzRequired
+        >Subjects</nz-form-label
+      >
+      <nz-form-control nzSpan="16" nzHasFeedback [nzErrorTip]="subjectError">
+        <nz-select ngModel="Maths" id="subject" formControlName="subject">
+          <nz-option nzValue="Maths" nzLabel="Maths"></nz-option>
+          <nz-option nzValue="English" nzLabel="English"></nz-option>
+          <nz-option nzValue="History" nzLabel="History"></nz-option>
+          <nz-option nzValue="Physics" nzLabel="Physics"></nz-option>
+          <nz-option nzValue="Chemistry" nzLabel="Chemistry"></nz-option>
+        </nz-select>
+        <ng-template #subjectError let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >subject is required</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzSpan="9" nzFor="grade" nzRequired>Grade</nz-form-label>
+      <nz-form-control nzSpan="16" nzHasFeedback>
+        <nz-radio-group formControlName="grade">
+          <label nz-radio-button [nzValue]="'A'">A</label>
+          <label nz-radio-button [nzValue]="'B'">B</label>
+          <label nz-radio-button [nzValue]="'C'">C</label>
+        </nz-radio-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzOffset="6">
+        <button nz-button nzType="primary">Update</button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="default" (click)="onBack()">Back</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  <div *ngIf="!studentFound">
+    <h1>Student Not Found</h1>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card" #divContent>
+    <ng-content select=".header"></ng-content>
+    <ng-content select="content"></ng-content>
+    <ng-content select="footer"></ng-content>
+</div>
+<div class="new-div" #div1>
+
+</div>
+<div class="div1" style="border: 1px solid black; margin :5px;">This is Div1</div>
+  <div class="div2" style="border: 1px solid black; margin :5px;">This is Div2</div>
+
+<button (click)="createElement()">createElement</button>
+<button (click)="createElement2()">createElement2</button>
+<button (click)="exampleDiv2()">createDiv2</button>
+<button #hello>hello</button>
+click count {{count}}

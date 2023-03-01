@@ -1,0 +1,91 @@
+
+
+<h1>welcome to browser {{userName}}</h1>
+
+
+Name:
+<input type="text" name="name"  ngModel (ngModelChange)="nameChanged($event)">
+<br/>
+
+
+<input (input)="handleInput($event)">
+<p>You have entered {{value}}</p>
+ <br/>
+ <hr/>
+ It is the keystroke combination of event binding when we press keys and enter it will give you the output below
+<br/>
+<input (keyup.enter)="keyHandle($event)" />
+<p>You entered {{value1}}</p>
+<br/>
+
+<hr/>
+
+This inline input writing in html input element, and adding event binding with clear by clicking on it will clear the user input
+<br/>
+<input type="text" [value]="name" (input)="name=$any($event.target).value">
+<p> You entered {{name}}</p>
+<button (click)="clearName()">Clear</button>
+
+
+<hr/>
+The ngSwitch Directive:
+
+<div class="card-body">
+    Input string : <input type='text' [(ngModel)]="num" />
+ 
+    <div [ngSwitch]="num">
+      <div *ngSwitchCase="'1'">One</div>
+      <div *ngSwitchCase="'2'">Two</div>
+      <div *ngSwitchCase="'3'">Three</div>
+      <div *ngSwitchCase="'4'">Four</div>
+      <div *ngSwitchCase="'5'">Five</div>
+      <div *ngSwitchDefault>This is Default</div>
+    </div>
+  </div>
+
+<hr/>
+The ngIf Directive:
+<br/>
+<div *ngIf="condition; else elseBlock">
+    as it condition is true, so it is rendered
+</div>
+<ng-template #elseBlock>
+  As the condition id flase, so it is rendered
+</ng-template>
+<br/>
+<button on-click="toggleNgIf()">Toggle</button>
+
+<hr/>
+difference between ngIf and hidden property: hidden property hides the element in the DOM,but 
+ngIf removes element from the DOM if the condition id false
+<br/>
+  <div [hidden]="hideUser">
+    Number Of Users: <div [innerText]="noOfRooms"></div>
+</div>
+<button (click)="toggle()">Toggle</button>
+<hr/>
+
+<div [ngClass]="['red', 'size20']"> Red Text with Size 20px </div>
+
+<hr/>
+<input [(ngModel)]="color">
+<!-- <div  [ngStyle]="{'color':color===''?'red':'blue'}">change my color</div> -->
+<div  [ngStyle]="{'color':color}">change my color</div>
+<hr/>
+The pipe example:
+Datepipe:
+<p>Formatted date:{{toDate|date|uppercase}}</p>
+SlicePipe:
+<p>{{msg|slice:0:5}}</p>
+Decimal/NumberPipe:
+<p>{{num1|number:'4.1-3'}}</p>
+PercentagePipe:
+<p>{{per|percent:'2.1-3'}}</p>
+CurrencyPipe:
+<p>{{cur|currency:'INR':true:'3.1-3'}}</p>
+
+<p>{{temp|tempConverter:'C'}}</p>
+
+<app-list [customerslist]="customers" (selectedUser)="selectUser($event)"></app-list>
+{{array|json}}
+

@@ -1,0 +1,180 @@
+<div [ngStyle]="{'background-color':'lightblue','height':'90%'}">
+
+  <h1>Hello</h1>
+
+  <button nz-button nzDanger="true" nzType="primary" nzSize="default" nzLoading="false" nzShape="round"
+    nzBlock="false">Submit</button>
+  <br>
+
+  <span nz-icon nzType="star" nzTheme="fill" nzSpin="false"></span>
+  <span nz-icon nzType="loading"></span>
+
+
+
+  <div nz-row>
+    <div nz-col nzSpan="8" [ngStyle]="{'border':'1px red solid'}">col-8</div>
+    <div nz-col nzSpan="8" nzOffset="8" [ngStyle]="{'border':'1px red solid'}">col-8</div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+  </div>
+
+
+  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+    <div nz-col [nzSpan]="6">
+      <div class="inner-box" [ngStyle]="{'border':'1px red solid'}">col-6</div>
+    </div>
+    <div nz-col [nzSpan]="6">
+      <div class="inner-box" [ngStyle]="{'border':'1px red solid'}">col-6</div>
+    </div>
+    <div nz-col [nzSpan]="6">
+      <div class="inner-box" [ngStyle]="{'border':'1px red solid'}">col-6</div>
+    </div>
+    <div nz-col [nzSpan]="6">
+      <div class="inner-box" [ngStyle]="{'border':'1px red solid'}">col-6</div>
+    </div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="18" nzPush="5" [ngStyle]="{'border':'1px red solid'}">col-18</div>
+    <div nz-col nzSpan="4" nzPull="0" [ngStyle]="{'border':'1px yellow solid'}">col-4</div>
+  </div>
+
+  <div nz-row nzJustify="space-between" nzAlign="middle">
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+    <div nz-col nzSpan="4" [ngStyle]="{'border':'1px red solid'}">col-4</div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="4" nzOrder="4" [ngStyle]="{'border':'1px red solid'}">1 col-4</div>
+    <div nz-col nzSpan="4" nzOrder="3" [ngStyle]="{'border':'1px red solid'}">2 col-4</div>
+    <div nz-col nzSpan="4" nzOrder="1" [ngStyle]="{'border':'1px red solid'}">3 col-4</div>
+    <div nz-col nzSpan="4" nzOrder="2" [ngStyle]="{'border':'1px red solid'}">4 col-4</div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzFlex="100px" [ngStyle]="{'border':'1px red solid'}">2/5</div>
+    <div nz-col nzFlex="auto" [ngStyle]="{'border':'1px red solid'}">3/5</div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10" [ngStyle]="{'border':'1px red solid'}">Col</div>
+    <div nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="8" nzXl="4" [ngStyle]="{'border':'1px red solid'}">Col</div>
+    <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10" [ngStyle]="{'border':'1px red solid'}">Col</div>
+  </div>
+
+  <div nz-row>
+    <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }" [ngStyle]="{'border':'1px red solid'}">
+      Col</div>
+    <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }" [ngStyle]="{'border':'1px red solid'}">
+      Col</div>
+    <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }" [ngStyle]="{'border':'1px red solid'}">
+      Col</div>
+  </div>
+
+  <nz-layout>
+    <nz-header>Header</nz-header>
+    <nz-layout>
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="inline" class="sider-menu">
+          <li nz-submenu nzOpen nzIcon="user" nzTitle="subnav 1">
+            <ul>
+              <li nz-menu-item nzSelected>option1</li>
+              <li nz-menu-item>option2</li>
+              <li nz-menu-item>option3</li>
+              <li nz-menu-item>option4</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="subnav 2" nzIcon="laptop">
+            <ul>
+              <li nz-menu-item>option5</li>
+              <li nz-menu-item>option6</li>
+              <li nz-menu-item>option7</li>
+              <li nz-menu-item>option8</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="subnav 3" nzIcon="notification">
+            <ul>
+              <li nz-menu-item>option9</li>
+              <li nz-menu-item>option10</li>
+              <li nz-menu-item>option11</li>
+              <li nz-menu-item>option12</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-content>Content</nz-content>
+    </nz-layout>
+    <nz-footer>Footer</nz-footer>
+  </nz-layout>
+
+
+  <div>
+    <a nz-dropdown [nzDropdownMenu]="menu">
+      Hover me
+      <span nz-icon nzType="down"></span>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>1st menu item</li>
+        <li nz-menu-item>2nd menu item</li>
+        <li nz-menu-divider></li>
+        <li nz-menu-item nzDisabled>3rd menu item（disabled）</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+
+  <input nz-input placeholder="Basic usage" [(ngModel)]="value" />
+  <br />
+  <br />
+  <input nz-input placeholder="Basic usage" [(ngModel)]="value" [disabled]="true" />
+
+  <nz-slider [(ngModel)]="value1" [nzDisabled]="disabled"></nz-slider>
+  <nz-slider nzRange [(ngModel)]="value2" [nzDisabled]="disabled"></nz-slider>
+  Disabled:
+  <nz-switch nzSize="small" [(ngModel)]="disabled"></nz-switch>
+
+
+
+  <div>
+    <nz-slider [ngModel]="30" [nzReverse]="reverse"></nz-slider>
+    <nz-slider nzRange [ngModel]="[20, 50]" [nzReverse]="reverse"></nz-slider>
+    <nz-slider [nzMarks]="marks" [ngModel]="30" [nzReverse]="reverse"></nz-slider>
+    Reversed:
+    <nz-switch nzSize="small" [(ngModel)]="reverse"></nz-switch>
+  </div>
+
+
+  <nz-slider [nzTooltipVisible]="'always'"></nz-slider>
+    <nz-slider [nzTooltipVisible]="'never'"></nz-slider>
+
+    <button nz-button nz-popover nzType="primary" nzPopoverTitle="Title" nzPopoverContent="Content">Hover me</button>
+    
+<div>
+  <nz-tabset>
+    <nz-tab nzTitle="Tab 1">Content of Tab Pane 1</nz-tab>
+    <nz-tab nzTitle="Tab 2">Content of Tab Pane 2</nz-tab>
+    <nz-tab nzTitle="Tab 3">Content of Tab Pane 3</nz-tab>
+  </nz-tabset>
+</div>
+
+
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <p>Content one</p>
+        <p>Content two</p>
+        <p>Content three</p>
+      </ng-container>
+    </nz-modal>
+
+
+    <nz-spin nzSimple></nz-spin>
+
+    <nz-skeleton [nzActive]="true"></nz-skeleton>
+
+</div>

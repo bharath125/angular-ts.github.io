@@ -1,0 +1,21 @@
+<h1 [ngStyle]="{'text-align':'center'}">Product List</h1>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;">
+                <td><a [routerLink]="['/product/view',product.productID]">{{product.name}}</a></td>
+               <td>{{product.price}}</td>
+               <td><a [routerLink]="['/product/view',product.productID]">View</a></td>
+               <td><a [routerLink]="['/product/edit',product.productID]">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ 
+<router-outlet></router-outlet>

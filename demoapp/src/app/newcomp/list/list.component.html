@@ -1,0 +1,27 @@
+The ngFor Directive:
+
+<table class='table'>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Select User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customerslist;">
+        <td>{{customer.customerNo}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.state}}</td>
+        <td><button (click)="selectUser(customer)">Select</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  

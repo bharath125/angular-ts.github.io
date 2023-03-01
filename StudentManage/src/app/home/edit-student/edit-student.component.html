@@ -1,0 +1,61 @@
+<form formGroup="studentForm" (ngSubmit)="onSubmit()" novalidate>
+    <p>
+        <label for="id">Roll Number </label>
+        <input type="text" id="id" name="id" formControlName="id">
+    </p>
+
+   
+    <p>
+        <label for="lastname">Student Name: </label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastName">
+    </p>
+    <div *ngIf="!studentForm.controls.lastName?.valid && (studentForm.controls.lastName?.dirty||studentForm.controls.lastName?.touched)">
+        <div [ngStyle]="{'color':'red'}" [hidden]="!studentForm.controls.lastName.errors?.['required']">First Name Required</div>
+        <div [ngStyle]="{'color':'red'}" [hidden]="!studentForm.controls.lastName.errors?.['minlength']">Minimum Length is 6</div>
+    </div>
+    <!-- <p>
+        <label for="subject">Subjects </label>
+        <select id="subject" name="subject" formControlName="subject">
+            <option value="Maths">Maths</option>
+            <option value="English">English</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Physics">Physics</option>
+            <option value="History">History</option>
+        </select>
+    </p> -->
+
+    <p>
+        <label for="subject">Subject </label>
+        <select  id="subject" name="subject" formControlName="subject">
+            <option ngValue="null" disabled>Select Subject</option>
+            <option ngValue="s.name"  *ngFor="let s of subjectList">{{s.name}}</option>
+        </select>
+    </p>
+
+    <div *ngIf="!studentForm.controls.subject?.valid && (studentForm.controls.subject?.dirty ||studentForm.controls.grade?.touched)">
+        <div [ngStyle]="{'color':'red'}" [hidden]="!studentForm.controls.subject.errors?.['required']">
+            Subject is Required
+        </div>
+    </div>
+
+    <p>
+        <label for="grade">Grade </label>
+        <input type="radio" id="grade" value="A" name="grade" formControlName="grade">A Grade
+        <input type="radio" id="grade" value="B" name="grade" formControlName="grade">B Grade
+        <input type="radio" id="grade" value="C" name="grade" formControlName="grade">C Grade
+    </p>
+
+    <div *ngIf="!studentForm.controls.grade?.valid && (studentForm.controls.grade?.dirty ||studentForm.controls.grade?.touched)">
+        <div [hidden]="!studentForm.controls.grade.errors?.['required']">
+            grade is required
+        </div>
+    </div>
+
+    <p>
+        <button type="submit">Edit</button>
+        <button [disabled]="!this.studentForm.valid" type="submit"  >Update </button>
+    </p>
+    
+
+    {{this.studentForm.valid}}
+</form>

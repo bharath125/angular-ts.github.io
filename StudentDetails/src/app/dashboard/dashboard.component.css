@@ -1,0 +1,33 @@
+.dashboard-table {
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.logout-btn {
+  text-align: center;
+}
+
+h2,
+h1 {
+  color: white;
+}
+
+/* .dashboard-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.table-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.dlt-btn {
+  background-color: red;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+} */

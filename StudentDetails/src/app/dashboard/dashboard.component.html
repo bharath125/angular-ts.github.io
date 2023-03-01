@@ -1,0 +1,79 @@
+<div class="dashboard-table">
+  <div>
+    <div class="logout-btn">
+      <button nz-button nzType="primary" nzSize="large">
+        <a routerLink="/" (click)="onLogOut()">Log Out</a>
+      </button>
+    </div>
+    <div nz-row nzJustify="space-between" class="dashboard-nav">
+      <h2>
+        <strong>Total Students: {{ count }}</strong>
+      </h2>
+      <div>
+        <button nz-button nzType="primary">
+          <a routerLink="/add-student">Add Student</a>
+        </button>
+      </div>
+    </div>
+    <h1 [ngStyle]="{ 'text-align': 'center' }">Student Management Database</h1>
+
+    <div nz-row nzJustify="center">
+      <nz-table
+        #dataTable
+        [nzData]="list"
+        nz-col
+        nzSpan="24"
+        nzFrontPagination="false"
+        nzTableLayout="fixed"
+        [nzScroll]="{ x: '1150px', y: '240px' }"
+      >
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Edit & Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of dataTable.data">
+            <td>{{ i.firstName }}</td>
+            <td>{{ i.lastName }}</td>
+            <td>{{ i.subject }}</td>
+            <td>{{ i.grade }}</td>
+            <td>
+              <button
+                nz-button
+                nzType="primary"
+                (click)="OnEdit(i)"
+                type="button"
+              >
+                <a>Edit</a>
+              </button>
+              <nz-divider nzType="vertical"></nz-divider>
+              <button
+                nz-button
+                nzType="primary"
+                nzDanger="true"
+                class="dlt-btn"
+                (click)="Ondelete(i.id)"
+                type="button"
+              >
+                <a
+                  nz-popconfirm
+                  nzPopconfirmTitle="Are you sure to delete?"
+                  nzOkText="ok"
+                  nzCancelText="cancel"
+                  (nzOnConfirm)="confirm(i.id)"
+                  (nzOnCancel)="cancel()"
+                  >Delete</a
+                >
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

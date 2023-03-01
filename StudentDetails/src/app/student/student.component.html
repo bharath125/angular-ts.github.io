@@ -1,0 +1,54 @@
+{{student|json}}
+
+<!-- <table>
+    <tr>
+        <th>sl no</th>
+        <td>{{student[0].id}}</td>
+    </tr>
+    <tr>
+        <th>FirstName</th>
+        <td>{{student[0].firstName}}</td>
+    </tr>
+    <tr>
+        <th>LastName</th>
+        <td>{{student[0].lastName}}</td>
+    </tr>
+    <tr>
+        <th>Subject</th>
+        <td>{{student[0].subject}}</td>
+    </tr>
+    <tr>
+        <th>Grade</th>
+        <td>{{student[0].grade}}</td>
+    </tr>
+</table>
+
+<div >
+    <button type="button" (click)="onEdit()"><a routerLink="edit">Edit</a></button>
+</div> -->
+
+
+
+
+<table>
+    <thead >
+        <tr >
+            <th>sl no</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of student">
+            <td>{{i.id}}</td>
+            <td>{{i.firstName}}</td>
+            <td>{{i.lastName}}</td>
+            <td>{{i.subject}}</td>
+            <td>{{i.grade}}</td>
+            <td><button (click)="onEdit(i)"  type="button"><a routerLink="edit">Edit</a></button></td>
+        </tr>
+    </tbody>
+</table>
